@@ -1,0 +1,60 @@
+:root {
+    --ss-color-113392: #2E8E43;
+    --ss-color-113393: #FF6B00;
+    --ss-color-113394: #003566;
+    --ss-color-113395: #1A1A1B;
+    --ss-color-113392-dark: #15752a;
+    --ss-color-113393-dark: #e65200;
+    --ss-color-113394-dark: #001c4d;
+    --ss-color-113395-dark: #010102;
+}
+
+
+.site-container {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.primary-navigation,
+.location-quick-links {
+    font-family: 'Viga', sans-serif;
+}
+
+.primary-navigation .page-listing li {
+  font-size: 18px;
+}
+
+.post--title,
+.post-column_set .column--title,
+.post-item_list .item--title,
+.post-gallery .gallery-photo--title,
+.post-menu .item--name,
+.post-pricing_table .plan--title,
+.location-title,
+.footer-container .about-title,
+.social-icons__title {
+    font-family: 'Inter', sans-serif;
+}
+
+
+.post-button {
+
+    border-style: none;
+
+  border-radius: 11px;
+
+    box-shadow: 0px 4px 12px 1.28px rgba(0, 0, 0, 0.3);
+
+}
+
+
+body {
+  background-color: #ffffff;
+}
+
+body:before {
+    background-image: url(/mirror/9130e10586366a05.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

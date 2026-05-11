@@ -1,61 +1,103 @@
-# FastRides Rentals Clone
+# FastRides Rentals
 
-Local Vite and Capacitor repo for a close FastRides Rentals website clone based on the public SiteSwan pages at `https://fastridesrentals.com/`.
+Static GitHub Pages mirror of `https://fastridesrentals.com/`, packaged with Vite and Capacitor.
 
-## Tech Used
+The GitHub Pages publish folder is `docs/`, matching the setup used by `/Users/vankayalafamily/workspace/chroma-shades-site`.
 
-| Tool | Purpose in this repo |
-| --- | --- |
-| HTML | `index.html` defines the page shell and launch screen markup. |
-| CSS | `src/styles.css` recreates the SiteSwan-style layout, responsive UI, slideshow, parallax backgrounds, and reveal animations. |
-| JavaScript | `src/main.js` handles SPA routing, navigation, slideshow behavior, contact form feedback, launch fade, and native back-button logic. |
-| Node.js | Runs the local dev/build toolchain. |
-| npm | Installs packages and runs scripts. |
-| Vite | Serves the web app and builds `dist/`. |
-| Capacitor | Wraps the Vite web app in native Android/iOS containers. |
-| `@capacitor/app` | Handles Android hardware back-button navigation and app exit. |
-| TypeScript | `capacitor.config.ts` provides typed Capacitor configuration. |
-| Gradle | Android project includes Gradle wrapper files in `android/`. |
-| Android SDK / Android Studio | Needed locally to compile and run the Android app. |
-| Xcode | Needed locally to generate/open/build the iOS app. |
-| Swift | Capacitor iOS project shell uses Swift after `npx cap add ios`. |
-| CocoaPods | Needed locally before adding/syncing iOS dependencies. |
+## Local Preview
 
-## Local Web Commands
+From this folder:
 
 ```bash
+cd /Users/vankayalafamily/workspace/fastrides
 npm install
 npm run dev
-npm run build
-npm run preview
 ```
 
-## Capacitor Commands
+Open the localhost URL printed by Vite.
+
+To preview exactly what GitHub Pages will serve:
+
+```bash
+npm run build
+rm -rf docs
+cp -R dist docs
+cp docs/index.html docs/404.html
+python3 -m http.server 5173 -d docs
+```
+
+Then open:
+
+```text
+http://localhost:5173
+```
+
+## Publish on GitHub Pages
+
+Push this repo to:
+
+```text
+git@github.com:venkat224156/fastrides.git
+```
+
+In GitHub repo settings:
+
+1. Go to `Settings -> Pages`.
+2. Under `Build and deployment`, set `Source` to `Deploy from a branch`.
+3. Set `Branch` to `main`.
+4. Set `Folder` to `/docs`.
+5. Save.
+
+GitHub Pages should publish from:
+
+```text
+https://venkat224156.github.io/fastrides/
+```
+
+## Custom Domain
+
+If using:
+
+```text
+fastridesrentals.com
+```
+
+Add this file before rebuilding docs:
+
+```bash
+echo "fastridesrentals.com" > public/CNAME
+npm run build
+rm -rf docs
+cp -R dist docs
+cp docs/index.html docs/404.html
+```
+
+Then commit and push.
+
+At the DNS provider, use:
+
+```text
+A     @      185.199.108.153
+A     @      185.199.109.153
+A     @      185.199.110.153
+A     @      185.199.111.153
+CNAME www    venkat224156.github.io
+```
+
+After DNS propagates, go to `Settings -> Pages` and enable `Enforce HTTPS`.
+
+## Mobile App
+
+The web app is also wrapped with Capacitor.
 
 ```bash
 npm run sync
 npx cap open android
-npx cap add ios
-npx cap open ios
 ```
 
-Android has already been generated and synced in `android/`.
-
-iOS was not generated on this machine because CocoaPods is not installed and full Xcode is not selected. After installing Xcode and CocoaPods, run:
+iOS requires full Xcode and CocoaPods:
 
 ```bash
 npx cap add ios
 npx cap sync ios
 ```
-
-## Native Toolchain Notes
-
-The Android wrapper exists, but `./android/gradlew assembleDebug` requires a configured Java runtime plus Android SDK/Android Studio.
-
-The current Mac reports Command Line Tools for `xcodebuild`, not full Xcode. Install/select Xcode with:
-
-```bash
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-```
-
-Then install CocoaPods using your preferred method and rerun the iOS Capacitor commands.
