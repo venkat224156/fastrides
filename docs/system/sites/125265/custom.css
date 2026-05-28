@@ -58,3 +58,115 @@ body:before {
   background-size: cover;
 }
 
+
+
+.whatsapp-chat-button {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 58px;
+  min-height: 58px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.whatsapp-chat-button:hover,
+.whatsapp-chat-button:focus {
+  background: #1ebe5d;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
+}
+
+.whatsapp-chat-button .fa-whatsapp {
+  font-size: 26px;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-chat-button {
+    right: 16px;
+    bottom: 16px;
+    min-width: 54px;
+    min-height: 54px;
+    padding: 0 15px;
+    font-size: 15px;
+  }
+}
+
+
+#post_12709127 .gallery-photos-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+}
+
+#post_12709127 .gallery-photo {
+  display: flex;
+  flex-direction: column;
+  float: none;
+  width: min(460px, 100%);
+  margin: 0;
+}
+
+#post_12709127 .gallery-photo .photo--outer-wrapper {
+  width: 100%;
+}
+
+#post_12709127 .gallery-photo--title {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#post_12709127 .gallery-photo--description {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+#post_12709127 .post-button--wrapper {
+  margin-top: auto;
+  padding-top: 24px;
+  min-height: 74px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#post_12709127 .post-button {
+  min-width: 220px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  #post_12709127 .gallery-photos-wrapper {
+    gap: 40px;
+  }
+
+  #post_12709127 .gallery-photo--title {
+    min-height: 0;
+  }
+
+  #post_12709127 .post-button--wrapper {
+    min-height: 0;
+  }
+}

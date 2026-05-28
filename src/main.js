@@ -20,7 +20,7 @@ const images = {
 const navItems = [
   ['/', 'Home'],
   ['/about-us', 'About Us'],
-  ['/our-rentals', 'Our Rentals'],
+  ['/our-fleet', 'Our Fleet'],
   ['/contact-us', 'Contact Us']
 ];
 
@@ -75,7 +75,7 @@ const home = () => `
     title: 'FastRides',
     subtitle: 'Premium Benz vans and affordable small cars for daily, monthly, and long-term rentals in Dallas, Texas.',
     button: 'Explore Rentals',
-    href: '/our-rentals'
+    href: '/our-fleet'
   })}
   <section class="section center reveal">
     <p class="eyebrow">Our Fleet</p>
@@ -83,16 +83,16 @@ const home = () => `
     <p class="lead">FastRides offers premium Benz vans and affordable small cars for daily, monthly, and long-term rentals in Dallas, Texas. Choose the vehicle that fits your lifestyle.</p>
     <div class="gallery-grid">
       <article class="rental-card">
-        <a href="/our-rentals" data-link><img src="${images.van}" alt="Luxury Mercedes-Benz van" /></a>
+        <a href="/our-fleet/" data-link><img src="${images.van}" alt="Luxury Mercedes-Benz van" /></a>
         <h3>Luxury Benz Vans</h3>
         <p>Premium Mercedes-Benz Sprinter vans for group travel, airport transportation, executive rides, and special occasions. Spacious, comfortable, and professional.</p>
-        <a class="button" href="/our-rentals" data-link>Book a Van</a>
+        <a class="button" href="/our-fleet/" data-link>Book a Van</a>
       </article>
       <article class="rental-card">
-        <a href="/our-rentals" data-link><img src="${images.car}" alt="Small car rental" /></a>
+        <a href="/our-fleet/" data-link><img src="${images.car}" alt="Small car rental" /></a>
         <h3>Small Cars</h3>
         <p>Efficient and reliable small cars for daily commuting, errands, and long-term rentals. Clean, fuel-efficient, and easy to drive around Dallas.</p>
-        <a class="button" href="/our-rentals" data-link>Book a Car</a>
+        <a class="button" href="/our-fleet/" data-link>Book a Car</a>
       </article>
     </div>
   </section>
@@ -166,7 +166,7 @@ const about = () => `
     title: 'About FastRides',
     subtitle: 'Dallas, Texas car rentals with luxury Benz vans, small cars, transparent pricing, and fast booking.',
     button: 'View Rentals',
-    href: '/our-rentals',
+    href: '/our-fleet',
     bg: images.fleet,
     compact: true
   })}
@@ -236,7 +236,7 @@ const contact = () => `
 const routes = {
   '/': home,
   '/about-us': about,
-  '/our-rentals': rentals,
+  '/our-fleet': rentals,
   '/contact-us': contact
 };
 
